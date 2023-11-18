@@ -1,0 +1,67 @@
+
+    <h6>Gestión De Bloqueos</h6>
+    <div class="container">
+        <div class="row">
+            <div class="col s4">
+                <form #bloqueoForm1="ngForm" (ngSubmit)="addBloqueo(bloqueoForm1)">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="hidden" name="_id" #_id="ngModel"
+                            [(ngModel)]="bloqueoServicio.selectedBloqueo._id">
+                        </div>
+                        <div class="input-field col s12">
+                                <input type="number" name="cantidad" id="Cantidad" #cantidad="ngModel"
+                                [(ngModel)]="bloqueoServicio.selectedBloqueo.cantidad" required="true">
+                                <label for="Cantidad">Número de huecos bloqueados</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input type="date" name="fecha" id="fecha" #fecha="ngModel"
+                            [(ngModel)]="bloqueoServicio.selectedBloqueo.fecha" required="true">
+                            <label for="fecha">Fecha de bloqueo</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input type="text" name="medico" id="medico" #medico="ngModel"
+                            [(ngModel)]="bloqueoServicio.selectedBloqueo.medico"required="true">
+                            <label for="medico">Facultativo</label>
+                        </div>
+                        <div class="=card-action">
+                            <div class="input-field col s12">
+                                <button class="btn right" [disabled]="bloqueoForm1.invalid">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col s8">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Cantidad</th>
+                        <th>Fecha</th>
+                        <th>Médico</th>
+                        <th>Operaciones</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr *ngFor="let bloqueo of bloqueoServicio.bloqueos | orderBy | paginate: {itemsPerPage:8, currentPage:pageActual}">
+                        <td>{{bloqueo.cantidad}}</td>
+                        <td>{{bloqueo.fecha}}</td>
+                        <td>{{bloqueo.medico}}</td>
+                        <td>
+                            <a (click)="editBloqueo(bloqueo)">
+                                <i class="material-icons" style="cursor:pointer;">edit</i>
+                            </a>
+                            <a (click)="deleteBloqueo(bloqueo._id)">
+                                <i class="material-icons" style="cursor:pointer;">delete</i>
+                            </a>                           
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <pagination-controls class="my-pagination"(pageChange)="pageActual= $event"></pagination-controls>               
+                </div>
+            </div>
+        </div>  
+
+

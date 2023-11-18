@@ -1,0 +1,6 @@
+.my-pagination ::ng-deep .ngx-pagination{
+    background: rgb(249, 248, 248);
+    margin-bottom: 5px;
+    border:0mm;
+    border-style: hidden;
+  }
