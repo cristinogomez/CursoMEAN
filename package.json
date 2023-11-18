@@ -4,7 +4,7 @@
   "description": "Curso de MEAN",
   "main": "index.js",
   "scripts": {
-    "start":"node server/index.js",
+    "start":"node server/index.js, ng serve",
     "dev": "nodemon server/index.js"
   },
   "author": "Cristino Gomez",
