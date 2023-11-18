@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Bloqueo {\n  constructor(_id = '', cantidad = 2, fecha = '', medico = '') {\n    this._id = _id;\n    this.cantidad = cantidad;\n    this.fecha = fecha;\n    this.medico = medico;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
