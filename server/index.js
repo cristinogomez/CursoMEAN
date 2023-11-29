@@ -12,7 +12,7 @@ app.set('port',process.env.PORT || 3000);
 //middlewares
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors({origin: "https://cursomean-production.up.railway.app/"}));
+app.use(cors({origin: "https://localhost:4200"}));
 
 //routes
 app.use('/api/bloqueos',require('./routes/bloqueo.routes'));
