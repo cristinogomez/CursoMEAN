@@ -25,6 +25,7 @@ export class BloqueosComponent implements OnInit{
         this.bloqueoServicio.bloqueos = res as Bloqueo[];
       })
   }
+  //numero:number=this.getBloqueos.length;
   ngOnInit() {
     this.getBloqueos();
   };
